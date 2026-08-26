@@ -1,0 +1,26 @@
+generated: '2026-08-26'
+method: searched
+source: https://www.purplle.com/llms.txt
+name: Purplle Rate Limits
+description: >-
+  Purplle publishes no API rate limits, because it publishes no public API. No
+  developer documentation, throttling policy, quota table, or documented
+  RateLimit/X-RateLimit/Retry-After response header could be found on any Purplle
+  host or in the provider's own llms.txt, which describes only the consumer
+  catalogue. The public web edge is fronted by Radware Bot Manager, which
+  challenges automated clients with a non-standard HTTP 247 JavaScript challenge
+  rather than a documented 429 rate-limit response; that is bot mitigation on a
+  consumer storefront, not a published API rate-limit contract, and it is recorded
+  here as an observation rather than as a limit.
+limit_count: 0
+rate_limits: []
+observed_bot_mitigation:
+  host: www.purplle.com
+  vendor: Radware Bot Manager
+  behavior: >-
+    Unrecognised paths and automated user agents receive a non-standard HTTP 247
+    with a 577-byte JavaScript challenge shell. Not a documented rate limit.
+  status_on_challenge: 247
+note: >-
+  No `RateLimits` pointer is emitted in apis.yml, because there is no published
+  limit to point at.

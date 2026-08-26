@@ -1,0 +1,88 @@
+generated: '2026-08-26'
+method: probed
+source: direct unauthenticated HTTPS probes of every host in apis.yml (Purplle publishes
+  no API, so there are no baseURL or OpenAPI servers[] hosts to add)
+name: Purplle .well-known Probe
+description: >-
+  No .well-known document is served on any Purplle host. www.purplle.com sits behind
+  a Radware Bot Manager JS challenge that answers a non-standard HTTP 247 with an
+  identical 577-byte JavaScript challenge shell (the "rbzns"/"winsocks" bootstrap,
+  loading /kramericaindustries.ac_v2.lib.js) for every unrecognised path. A control
+  probe of a guaranteed-nonexistent path returned the same 247 status and the same
+  577 bytes, so a 247 here is the challenge, not a document and not a 404.
+  /.well-known/security.txt is the one exception: it returns HTTP 200 with a
+  ZERO-BYTE body and content-type text/html, which is an empty response rather than
+  an RFC 9116 document. api.purplle.com resolves but every path returns HTTP 502
+  from the edge. developer.purplle.com and docs.purplle.com do not resolve at all.
+  NO WellKnown and NO SecurityTxt pointer is emitted for this provider: nothing here
+  is a hit.
+hit_count: 0
+bot_challenge_host: www.purplle.com
+soft_404_control:
+  url: https://www.purplle.com/definitely-not-a-real-page-xyz-9931
+  status: 247
+  content_type: text/html; charset=utf-8
+  bytes: 577
+  note: >-
+    Control probe. Any 247 on www.purplle.com with this byte count is the Radware
+    Bot Manager challenge shell, not a served document.
+hosts:
+- host: https://www.purplle.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: null
+    note: 200 with a zero-byte body and content-type text/html. Not an RFC 9116 document.
+  - path: /.well-known/openid-configuration
+    status: 247
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 247
+    file: null
+  - path: /.well-known/api-catalog
+    status: 247
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 247
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 247
+    file: null
+  - path: /.well-known/agent.json
+    status: 247
+    file: null
+- host: https://api.purplle.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 502
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 502
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 502
+    file: null
+  - path: /.well-known/api-catalog
+    status: 502
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 502
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 502
+    file: null
+  - path: /.well-known/agent.json
+    status: 502
+    file: null
+- host: https://developer.purplle.com
+  documents:
+  - path: /.well-known/security.txt
+    status: null
+    file: null
+    note: Host does not resolve (DNS failure). No response.
+- host: https://docs.purplle.com
+  documents:
+  - path: /.well-known/security.txt
+    status: null
+    file: null
+    note: Host does not resolve (DNS failure). No response.

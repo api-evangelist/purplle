@@ -1,17 +1,33 @@
 aid: purplle
 name: Purplle
-description: 'Purplle is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Purplle is an Indian beauty and personal care e-commerce marketplace headquartered in Mumbai,
+  founded in 2012 by Manish Taneja, Rahul Dash, Suyash Katyayani and Anurag Neema. The platform sells
+  skincare, makeup, haircare, fragrance, bath and body, grooming, mom and baby and wellness products across
+  India, carrying a catalogue of 60,000+ products from 1,000+ brands alongside its own homegrown labels
+  — Good Vibes, DERMDOC, Alps Goodness, NY Bae, FACES CANADA, Carmesi, Salm Skin and Juicy Chemistry.
+  Purplle became an Indian unicorn in 2022 and is backed by ADIA, Kedaara, Premji Invest, Peak XV Partners,
+  Goldman Sachs, Verlinvest, JSW Ventures and Blume Ventures. It operates a consumer website and mobile
+  app plus 100+ offline stores, and publishes editorial guidance through Purplle Magazine. Purplle is
+  a direct-to-consumer retailer: as of this profile it publishes no public developer program, API documentation,
+  or machine-readable API contract. It does publish an llms.txt at its web root describing its catalogue
+  for AI agents.'
+image: https://media6.ppl-media.com/mediafiles/ecomm/promo/1728010486_purplle-logo.svg
 url: https://raw.githubusercontent.com/api-evangelist/purplle/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-26'
 modified: '2026-08-26'
 tags:
 - Company
+- Beauty
+- Cosmetics
+- E-Commerce
+- Retail
+- Marketplace
+- Personal Care
+- Consumer
+- India
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -20,4 +36,49 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://www.purplle.com/
+- type: About
+  url: https://www.purplle.com/pr/about-us
+- type: Blog
+  url: https://www.purplle.com/magazine
+- type: Support
+  url: https://www.purplle.com/contactus
+- type: PrivacyPolicy
+  url: https://www.purplle.com/privacy-policy
+- type: TermsOfService
+  url: https://www.purplle.com/terms-of-use
+- type: LLMsTxt
+  url: llms/purplle-llms.txt
+- type: DomainSecurity
+  url: security/purplle-domain-security.yml
+x-pointer-verification: 'Every www.purplle.com pointer above is taken verbatim from Purplle''s own published
+  https://www.purplle.com/llms.txt, which is the provider asserting these URLs. None could be independently
+  content-verified: the entire site is Angular client-rendered behind Radware Bot Manager. Unrecognised
+  paths return a non-standard HTTP 247 JavaScript challenge (577 bytes), and the /pr/ route is a CATCH-ALL
+  that answers HTTP 200 with a ~151KB shell and an EMPTY <link rel="canonical"> for any path, including
+  the control /pr/not-a-real-page-xyz-9931. A 200 from this host is therefore not evidence a page exists,
+  and no pointer here was credited on the basis of one.'
+x-enrichment:
+  date: '2026-08-26'
+  status: minimal
+  artifacts_added: 6
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: Purplle is a direct-to-consumer beauty marketplace whose only machine-readable publication is
+    a consumer-catalogue llms.txt; api.purplle.com answers HTTP 502 on every path, developer.purplle.com
+    and docs.purplle.com do not resolve, and no OpenAPI, GraphQL, MCP or agent-card probe returned a contract
+    on any host.
+  evidence:
+  - url: https://www.purplle.com/llms.txt
+    status: 200
+  - url: https://api.purplle.com/openapi.json
+    status: 502
+  - url: https://www.purplle.com/openapi.json
+    status: 247
+  - url: https://www.purplle.com/.well-known/agent-card.json
+    status: 247
+  - url: https://developer.purplle.com/openapi.json
+    status: 0
+  checked: '2026-08-26'

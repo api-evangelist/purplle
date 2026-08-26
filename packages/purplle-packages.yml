@@ -1,0 +1,23 @@
+generated: '2026-08-26'
+method: searched
+source: >-
+  Searched npm, PyPI, RubyGems, Packagist, crates.io, NuGet, Maven Central and
+  pkg.go.dev for a first-party Purplle client library, plus a web search of
+  github.com for a Purplle engineering organization.
+name: Purplle Packages
+description: >-
+  Purplle publishes no first-party SDK or client library in any public package
+  registry, and operates no public GitHub organization. Purplle is a
+  direct-to-consumer beauty marketplace with no developer program, so there is no
+  API for an SDK to wrap. Every "purplle" result on GitHub is a third-party
+  student or portfolio clone of the Purplle storefront (satyam0337/purplle,
+  Summi51/Clone-Of-Purplle, Vinay2603/purple.com, Purplle333/purplle-login) — none
+  are operated by or affiliated with Purplle, and none are recorded here. No
+  `SDKs` pointer is emitted, because there is no official SDK to point at.
+package_count: 0
+official_sdk_count: 0
+packages: []
+third_party_note: >-
+  Community clone repositories were found and deliberately EXCLUDED. They are not
+  Purplle-operated and listing them would misattribute third-party code to the
+  company.
