@@ -11,6 +11,17 @@ description: 'Purplle is an Indian beauty and personal care e-commerce marketpla
   a direct-to-consumer retailer: as of this profile it publishes no public developer program, API documentation,
   or machine-readable API contract. It does publish an llms.txt at its web root describing its catalogue
   for AI agents.'
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://media6.ppl-media.com/mediafiles/ecomm/promo/1728010486_purplle-logo.svg
 url: https://raw.githubusercontent.com/api-evangelist/purplle/refs/heads/main/apis.yml
 x-type: company
